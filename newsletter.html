@@ -11,27 +11,39 @@
       <nav>
           <a href="index.html">HOME</a>
           <a href="about.html">ABOUT</a>
-          <a href="newsletter.html">NEWSLETTER</a>
+          <a href="newsletter.html" class="active">NEWSLETTER</a>
       </nav>
     </section>
-
     </header>
-    <section>
-      <div class="background-photo-2">
-        <span class="email">EMAIL WIL BE HERE</span>
-      </div>
-      <form class="signUp" action="#">
-        <div class="name">
-          <label for="first_name">Name</label>
-          <input type="text" name="first_name" id="first_name">
-        </div>
-        <div class="email">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email">
+    <main id="newsletterPage">
+      <section class="signUp">
+        <h1>Sign Up For Our Weekly Newsletter</h1>
+        <h2>Stay up to date with the events, activities, news and specials.</h2>
+        <form>
+            <label for="first_name"></label>
+            <input type="text" name="first_name" id="first_name" placeholder="Name">
+            <label for="email"></label>
+            <input type="email" name="email" id="email" placeholder="Email">
+            <button type="submit" value="Submit" id="submitButton" >Submit</button>
 
-        </div>
         </form>
-
-    </section>
+      </section>
+    </main>
+    <script type="text/javascript">
+      var nameInput = document.getElementById('nameInput');
+      var emailInput = document.getElementById('emailInput');
+      var signupButton = document.getElementById('signupButton');
+      signupButton.addEventListener('click', function(e) {
+        var nameVal = nameInput.value;
+        var emailVal = emailInput.value;
+        if (nameVal && emailVal) {
+          alert('Thanks for signing up, ' + nameVal + '. Newsletters will be sent to ' + emailVal);
+          nameInput.value = "";
+          emailInput.value = "";
+        } else {
+          alert('We would love for you to sign up, please provide both your name and email address.');
+        }
+      });
+    </script>
   </body>
 </html>
